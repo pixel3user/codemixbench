@@ -1,6 +1,6 @@
 {
   "pass@1": 0.09298245614035087,
-  "model": "_bigcode--starcoder2-3b--main",
+  "model": "bigcode--starcoder2-3b--main",
   "split": "complete",
   "subset": "full",
   "calibrated": true,
