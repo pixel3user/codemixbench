@@ -1,0 +1,18 @@
+{
+  "pass@1": 0.37719298245614036,
+  "model": "deepseek-ai--DeepSeek-Coder-V2-Lite-Instruct--main",
+  "split": "complete",
+  "subset": "full",
+  "calibrated": true,
+  "gt_pass_rate": 0.9929824561403509,
+  "failed_tasks": [
+    "BigCodeBench/63",
+    "BigCodeBench/111",
+    "BigCodeBench/132",
+    "BigCodeBench/817",
+    "BigCodeBench/1005",
+    "BigCodeBench/1023",
+    "BigCodeBench/205",
+    "BigCodeBench/363"
+  ]
+}

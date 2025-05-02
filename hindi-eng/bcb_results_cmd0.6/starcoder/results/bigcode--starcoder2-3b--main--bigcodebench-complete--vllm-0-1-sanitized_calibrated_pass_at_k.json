@@ -1,0 +1,19 @@
+{
+  "pass@1": 0.09298245614035087,
+  "model": "_bigcode--starcoder2-3b--main",
+  "split": "complete",
+  "subset": "full",
+  "calibrated": true,
+  "gt_pass_rate": 0.9921052631578947,
+  "failed_tasks": [
+    "BigCodeBench/63",
+    "BigCodeBench/111",
+    "BigCodeBench/132",
+    "BigCodeBench/205",
+    "BigCodeBench/363",
+    "BigCodeBench/812",
+    "BigCodeBench/832",
+    "BigCodeBench/1005",
+    "BigCodeBench/1023"
+  ]
+}
