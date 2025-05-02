@@ -1,6 +1,6 @@
 {
   "pass@1": 0.0412280701754386,
-  "model": "_deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B--main",
+  "model": "deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B--main",
   "split": "complete",
   "subset": "full",
   "calibrated": true,

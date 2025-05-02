@@ -1,6 +1,6 @@
 {
   "pass@1": 0.41228070175438597,
-  "model": "_Qwen--Qwen2.5-Coder-7B-Instruct--main",
+  "model": "Qwen--Qwen2.5-Coder-7B-Instruct--main",
   "split": "complete",
   "subset": "full",
   "calibrated": true,
