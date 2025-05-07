@@ -39,13 +39,16 @@ Override the default BigCodeBench dataset path using an environment variable:
 
 ```python
 import os
-os.environ["BIGCODEBENCH_OVERRIDE_PATH"] = "dataset/hin-eng-cmd0.6-instruct.jsonl"  # example
+os.environ["BIGCODEBENCH_OVERRIDE_PATH"] = "dataset/hindi-eng/MBigCodeBench-hini-end-cmd0.6.jsonl"  # example
 ```
 
 Available variants include:
-- `hin-eng-cmd0.6-instruct.jsonl`
-- `hin-eng-cmd0.9-instruct.jsonl`
-- `spanglish-cmd0.6-complete.jsonl` (and others)
+- `hin-eng-cmd0.6.jsonl`
+- `hin-eng-cmd0.9.jsonl`
+- `spanglish-cmd0.6.jsonl`
+- `spanglish-cmd0.9.jsonl`
+- `pinyin-english-cmd0.6.jsonl`
+- `pinyin-english-cmd0.6.jsonl`
 
 ### 2. Generate Model Predictions
 
@@ -58,6 +61,7 @@ bigcodebench.generate \
     --subset full \
     --max_new_tokens=3700
 ```
+> This will generate the code results from the LLM. The generated code samples will be stored in a file named `bcb_results/[model_name]--bigcodebench-[instruct|complete]--[backend]-[temp]-[n_samples]-sanitized_calibrated.jsonl.`
 
 > Replace `<model_name_or_path>` with any Hugging Face model path (e.g., `microsoft/Phi-4-multimodal-instruct`).
 
@@ -75,23 +79,17 @@ bigcodebench.evaluate \
 ```
 
 The evaluation will generate:
-- `*_eval_results.json` (functional execution outcomes)
-- `*_pass_at_k.json` (pass@1 metric)
-- Optionally, `*_sanitized_calibrated_pass_at_k.json` (post-processed scores)
+- All the resulted files will be stored in a folder named `bcb_results`
+- The evaluation results will be stored in a file named `[model_name]--bigcodebench-complete--[backend]-[temp]-[n_samples]-sanitized_calibrated_eval_results.json`
 
-### 📁 Output Directory
-
-Results are stored in:
-```
-codemixbench/hindi-eng/bcb_results_cmd<cmd_value>/<model_id>/results/
-```
-
-Each folder contains calibrated JSON results that can be aggregated and plotted using `code-eval.ipynb`.
+- The pass@k results will be stored in a file named `[model_name]--bigcodebench-complete--[backend]-[temp]-[n_samples]-sanitized_calibrated_pass_at_k.json`
 
 
 ## ✅ Pre-evaluated Model Results
 
-Previously generated and evaluated results can be found under evals folder, only for hindi-english code-mix combination results are generated and evaluated under both cmd 0.6 and 0.9 levels.
+Previously generated and evaluated results can be found under evals folder, only for hindi-english code-mix combination results are generated and evaluated under both cmd 0.6 and 0.9 levels, with their GAME validation results.
+
+Dataset creation, generation and evaluation code examples are provided as jupyter notebooks under the folder name examples.
 
 
 ## 📊 Results
@@ -121,7 +119,17 @@ Previously generated and evaluated results can be found under evals folder, only
 |DeepSeek-R1-Distill-Qwen-14B| 48.4| 38.8| 40.3|
 |DeepSeek-Coder-V2-Lite-Instruct| 47.6| 37.7| 38.1|
 |StarCoder2-15b-instruct-v0.1| 45.1| 33.1| 32.7|
+ 
 
-## Contributing
+## 📄 License
 
->📋  Pick a licence and describe how to contribute to your code repository. 
+This project is licensed under the **Apache License 2.0**.  
+See the [LICENSE](./LICENSE) file for more details.
+
+## 🙏 Acknowledgments
+
+We would like to express our gratitude to the creators of [BigCodeBench](https://github.com/bigcode-project/bigcodebench) for providing the foundation on which CodeMixBench is built. Our benchmark extends their infrastructure and dataset schema to evaluate code generation under multilingual and code-mixed prompting conditions.
+
+We also thank the open-source community for releasing the large language models used in this evaluation, as well as contributors to tools like Hugging Face Transformers, OpenReview, and the BigCode evaluation suite.
+
+This work would not have been possible without their foundational contributions.
