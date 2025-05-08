@@ -1,0 +1,14 @@
+{
+  "pass@1": 0.3649122807017544,
+  "model": "NousResearch--Hermes-2-Theta-Llama-3-8B--main",
+  "split": "complete",
+  "subset": "full",
+  "calibrated": true,
+  "gt_pass_rate": 0.9964912280701754,
+  "failed_tasks": [
+    "BigCodeBench/63",
+    "BigCodeBench/111",
+    "BigCodeBench/205",
+    "BigCodeBench/1023"
+  ]
+}
