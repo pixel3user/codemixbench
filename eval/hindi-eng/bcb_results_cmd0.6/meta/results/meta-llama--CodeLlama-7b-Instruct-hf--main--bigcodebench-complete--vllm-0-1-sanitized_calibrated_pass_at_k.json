@@ -1,6 +1,6 @@
 {
   "pass@1": 0.17719298245614035,
-  "model": "codellama--CodeLlama-7b-Instruct-hf--main",
+  "model": "meta-llama--CodeLlama-7b-Instruct-hf--main",
   "split": "complete",
   "subset": "full",
   "calibrated": true,
