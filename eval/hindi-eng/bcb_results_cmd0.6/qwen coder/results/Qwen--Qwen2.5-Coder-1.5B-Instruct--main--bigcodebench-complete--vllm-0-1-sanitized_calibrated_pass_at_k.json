@@ -1,19 +1,22 @@
 {
-  "pass@1": 0.31842105263157894,
+  "pass@1": 0.22543859649122808,
   "model": "Qwen--Qwen2.5-Coder-1.5B-Instruct--main",
   "split": "complete",
   "subset": "full",
   "calibrated": true,
-  "gt_pass_rate": 0.9921052631578947,
+  "gt_pass_rate": 0.9894736842105263,
   "failed_tasks": [
     "BigCodeBench/63",
     "BigCodeBench/111",
-    "BigCodeBench/132",
+    "BigCodeBench/289",
     "BigCodeBench/205",
+    "BigCodeBench/417",
+    "BigCodeBench/418",
+    "BigCodeBench/419",
     "BigCodeBench/363",
+    "BigCodeBench/657",
     "BigCodeBench/812",
     "BigCodeBench/832",
-    "BigCodeBench/1005",
     "BigCodeBench/1023"
   ]
 }

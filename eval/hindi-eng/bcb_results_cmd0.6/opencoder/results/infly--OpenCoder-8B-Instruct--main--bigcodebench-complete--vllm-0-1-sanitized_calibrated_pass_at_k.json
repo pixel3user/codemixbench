@@ -1,19 +1,22 @@
 {
-  "pass@1": 0.5131578947368421,
+  "pass@1": 0.393859649122807,
   "model": "infly--OpenCoder-8B-Instruct--main",
   "split": "complete",
   "subset": "full",
   "calibrated": true,
-  "gt_pass_rate": 0.9921052631578947,
+  "gt_pass_rate": 0.9894736842105263,
   "failed_tasks": [
     "BigCodeBench/63",
     "BigCodeBench/111",
-    "BigCodeBench/132",
+    "BigCodeBench/289",
     "BigCodeBench/205",
+    "BigCodeBench/417",
+    "BigCodeBench/418",
+    "BigCodeBench/419",
     "BigCodeBench/363",
+    "BigCodeBench/657",
     "BigCodeBench/812",
     "BigCodeBench/832",
-    "BigCodeBench/1005",
     "BigCodeBench/1023"
   ]
 }
