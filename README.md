@@ -105,16 +105,16 @@ Dataset creation, generation and evaluation code examples are provided as jupyte
 | DeepSeek-R1-Distill-Qwen-1.5B     |                 7.9 |        4.1 |       4.8 |
 | StarCoder2-3B                     |                 21.4 |        9.3|       9.1 |
 | Llama-3.2-1B                      |                 11.3 |         5 |       4.5 |
-| Qwen2.5-Coder-1.5B-Instruct       |                 32.7 |      31.8 |      22.2 |
-| Gemma-3-4b-it                     |                    ? |         ? |      28.4 |
-| OpenCoder-8B-Instruct             |                 50.9 |      51.3 |         ? |
-| Phi-4-multimodal-instruct         |                    ? |      46.4 |      33.1 |
-| DeepSeek-R1-Distill-Llama-8B      |                 15.3 |      15.9 |      11.1 |
-| Hermes-2-Theta-Llama-3-8B         |                    ? |      36.4 |         ? |
-| CodeLlama-7b-Instruct-hf          |                    ? |         ? |      17.7 |
+| Qwen2.5-Coder-1.5B-Instruct       |                 32.7 |      22.5 |      22.2 |
+| Gemma-3-4b-it                     |                 37.8 |      28.2 |      28.4 |
+| OpenCoder-8B-Instruct             |                 50.9 |      39.3 |      39.0 |
+| Phi-4-multimodal-instruct         |                 46.5 |      30.3 |      33.1 |
+| DeepSeek-R1-Distill-Llama-8B      |                 15.3 |      10.0 |      11.1 |
+| Hermes-2-Theta-Llama-3-8B         |                 36.4 |      30.3 |      29.1 |
+| CodeLlama-7b-Instruct-hf          |                 25.0 |      17.7 |      17.7 |
 | Qwen2.5-Coder-7B-Instruct         |                 48.8 |      41.2 |      41.3 |
-| Llama-3.1-8B-Instruct             |                 40.5 |      38.8 |      31.4 |
-|StarCoder2-7b| 27.7| ?| 8.9|
+| Llama-3.1-8B-Instruct             |                 40.5 |      30.7 |      31.4 |
+|StarCoder2-7b| 27.7| 6.8| 8.9|
 |Phi-4| 55.4| 46.7| 47.1|
 |DeepSeek-R1-Distill-Qwen-14B| 48.4| 38.8| 40.3|
 |DeepSeek-Coder-V2-Lite-Instruct| 47.6| 37.7| 38.1|
