@@ -34,6 +34,7 @@ pip install bigcodebench --upgrade
 
 
 ## 📈 Evaluation
+> You need a GPU with a compute capability of 8.0 and about 48gb of VRAM to run all the open-source model listed below. We use a single Nvidia L40s on a cloud environment hosted by Lightning AI.
 
 To evaluate models on CodeMixBench using the BigCodeBench evaluation pipeline, follow the steps below:
 
