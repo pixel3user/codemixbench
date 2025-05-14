@@ -15,9 +15,12 @@ CodeMixBench is a multilingual benchmark for evaluating large language models on
 
 > Overview of prompt examples in the dataset. 
 
-| **Instruct prompt**                                 | **Complete prompt**                               | **Doc strings**                             |
-|:---------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------:|
-| ![Instruct prompt](examples/figs/instruct.png)      | ![Complete prompt](examples/figs/complete.png)    | ![Doc strings](examples/figs/doc.png)       |
+| **Prompt Type**         | **Example**                                       |
+|-------------------------|---------------------------------------------------|
+| **Instruct prompt**     | ![Instruct prompt](examples/figs/instruct.png)    |
+| **Complete prompt**     | ![Complete prompt](examples/figs/complete.png)    |
+| **Doc strings**         | ![Doc strings](examples/figs/doc.png)             |
+  |
 
 
 ## 📦 Requirements
