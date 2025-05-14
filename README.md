@@ -6,12 +6,43 @@ on Code Generation with Code-Mixed Prompts]().
 Built on top of [BigCodeBench](https://huggingface.co/datasets/bigcode/bigcodebench), it introduces 6,840 prompts in three multilingual combinations:
 - **Hinglish** (Hindi-English)
 - **Spanglish** (Spanish-English)
-- **Pinyin-English** (Chinese-English)
+- **Chinese-English** (Chinese-English)
+
 
 Each task is augmented at two **Code-Mixing Degree (CMD)** levels: `CMD = 0.6` (light mixing) and `CMD = 0.9` (heavy mixing). The benchmark is designed to reflect real-world multilingual developer interactions and assesses model robustness beyond English-only settings.
 
 CodeMixBench is a multilingual benchmark for evaluating large language models on code generation tasks using code-mixed prompts. Built on top of BigCodeBench, it includes 6,840 prompts across Hinglish, Spanish-English, and Chinese Pinyin-English with controlled code-mixing levels (CMD = 0.6, 0.9).
->📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
+
+> Overview of prompt examples in the dataset. 
+
+<div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+">
+
+  <figure style="flex: 1; text-align: center; margin: 0 10px;">
+    <img src="examples/figs/instruct.png" alt="Title A" style="width: 100%; height: auto;" />
+    <figcaption><strong>Instruct prompt</strong></figcaption>
+    These examples are from the subset hindi-english with a code mix degree of 0.6. Other language dataset can be access through <a href="https://huggingface.co/datasets/ColdSlim/CodeMixBench" target="_blank" rel="noopener">Click here to view the dataset</a>
+
+  </figure>
+
+  <figure style="flex: 1; text-align: center; margin: 0 10px;">
+    <img src="examples/figs/complete.png" alt="Title B" style="width: 100%; height: auto;" />
+    <figcaption><strong>Complete prompt</strong></figcaption>
+  </figure>
+
+  <figure style="flex: 1; text-align: center; margin: 0 10px;">
+    <img src="examples/figs/doc.png" alt="Title C" style="width: 100%; height: auto;" />
+    <figcaption><strong>Doc strings</strong></figcaption>
+  </figure>
+
+</div>
+
+
 
 ## 📦 Requirements
 
@@ -21,12 +52,6 @@ We strongly recommend using an isolated environment to avoid conflicts with depe
 pip install -I -r https://raw.githubusercontent.com/bigcode-project/bigcodebench/main/Requirements/requirements-eval.txt
 pip install bigcodebench --upgrade
 ```
-
->📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
-
-
-
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
 
 
 ## 📈 Evaluation
@@ -42,13 +67,9 @@ import os
 os.environ["BIGCODEBENCH_OVERRIDE_PATH"] = "dataset/hindi-eng/MBigCodeBench-hini-end-cmd0.6.jsonl"  # example
 ```
 
-Available variants include:
-- `hin-eng-cmd0.6.jsonl`
-- `hin-eng-cmd0.9.jsonl`
-- `spanglish-cmd0.6.jsonl`
-- `spanglish-cmd0.9.jsonl`
-- `pinyin-english-cmd0.6.jsonl`
-- `pinyin-english-cmd0.6.jsonl`
+You have to specify the dataset you are using under `BIGCODEBENCH_OVERRIDE_PATH`.
+
+Refer to Dataset folder, you may need to convert parquet files to jsonl before setting them as an env variable.
 
 ### 2. Generate Model Predictions
 
@@ -91,6 +112,13 @@ Previously generated and evaluated results can be found under evals folder, only
 
 Dataset creation, generation and evaluation code examples are provided as jupyter notebooks under the folder name examples.
 
+> Augmentation steps are under `generation.ipynb` notebook.
+
+> Data evaluation(GAME) steps are under `dataset_eval.ipynb` notebook.
+
+> Model evaluation steps are under `model_eval.ipynb` notebook.
+
+All notebooks have instructions for each step, with their results.
 
 ## 📊 Results
 
@@ -120,6 +148,44 @@ Dataset creation, generation and evaluation code examples are provided as jupyte
 |DeepSeek-Coder-V2-Lite-Instruct| 47.6| 37.7| 38.1|
 |StarCoder2-15b-instruct-v0.1| 45.1| 33.1| 32.7|
  
+# Repository Structure Overview
+
+Below is a one-line description for each directory and file in the CodeMixBench repo:
+
+- **`dataset/`**  
+  Contains language-specific subfolders with code-mixed prompts, frequency tables, and GAME scores.
+
+  - **`dataset/chi-eng/`**  
+    Chinese-English subset of CodeMixBench.
+
+    - **`game_scores_cmd0.6.parquet`**  
+      GAME scores for chi-eng prompts at CMD = 0.6.  
+    - **`MBigCodeBench-chi-eng-cmd0.6.parquet`**  
+      Lightly code-mixed (CMD 0.6) prompts in Chinese–English.  
+    - **`MBigCodeBench-chi-eng-cmd0.9.parquet`**  
+      Heavily code-mixed (CMD 0.9) prompts in Chinese–English.  
+    - **`word_frequencies_ching.parquet`**  
+      Corpus frequencies of Chinese tokens for scoring.
+
+  - similar for the rest of language directories...
+
+- **`bigcodebench_results.csv`**  
+  The original English aggregated pass@1 and GAME evaluation results across all models,
+
+- **`eval/`**  
+  Model evaluated results for only hindi-english lanugage pair. Having pass@1 and generated results from each of the 17 models across both cmd value pairs. 
+  
+
+- **`examples/`**  
+
+  - **`dataset_eval.ipynb`**  
+  Jupyter notebook for computing and visualizing GAME scores on code-mixed datasets.
+
+  - **`generation.ipynb`**  
+  Notebook demonstrating the Gemini-based translation and CMD injection pipeline.
+
+  - **`model_eval.ipynb`**  
+  Notebook for running pass@1 and performance benchmarks on code generation models.
 
 ## 📄 License
 
