@@ -15,33 +15,9 @@ CodeMixBench is a multilingual benchmark for evaluating large language models on
 
 > Overview of prompt examples in the dataset. 
 
-<div style="
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    box-sizing: border-box;
-">
-
-  <figure style="flex: 1; text-align: center; margin: 0 10px;">
-    <img src="examples/figs/instruct.png" alt="Title A" style="width: 100%; height: auto;" />
-    <figcaption><strong>Instruct prompt</strong></figcaption>
-    These examples are from the subset hindi-english with a code mix degree of 0.6. Other language dataset can be access through <a href="https://huggingface.co/datasets/ColdSlim/CodeMixBench" target="_blank" rel="noopener">Click here to view the dataset</a>
-
-  </figure>
-
-  <figure style="flex: 1; text-align: center; margin: 0 10px;">
-    <img src="examples/figs/complete.png" alt="Title B" style="width: 100%; height: auto;" />
-    <figcaption><strong>Complete prompt</strong></figcaption>
-  </figure>
-
-  <figure style="flex: 1; text-align: center; margin: 0 10px;">
-    <img src="examples/figs/doc.png" alt="Title C" style="width: 100%; height: auto;" />
-    <figcaption><strong>Doc strings</strong></figcaption>
-  </figure>
-
-</div>
-
+| **Instruct prompt**                                 | **Complete prompt**                               | **Doc strings**                             |
+|:---------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------:|
+| ![Instruct prompt](examples/figs/instruct.png)      | ![Complete prompt](examples/figs/complete.png)    | ![Doc strings](examples/figs/doc.png)       |
 
 
 ## 📦 Requirements
